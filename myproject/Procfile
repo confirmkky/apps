@@ -1,3 +1,3 @@
-web: gunicorn app:app
+web: gunicorn myproject.wsgi --log-file -
 release: python manage.py migrate
 web: NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program gunicorn myproject.wsgi --log-file -
